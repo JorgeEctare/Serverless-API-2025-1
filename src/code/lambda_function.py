@@ -17,7 +17,7 @@ s3 = boto3.client("s3")
 def lambda_handler(event, context):
     """Função principal - roteia requisições HTTP"""
 
-    method = event.get("requestContext", {}).get("http", {}).get("method", "")
+    method = event.get("httpMethod", "")
     path = event.get("rawPath", "")
 
     try:
